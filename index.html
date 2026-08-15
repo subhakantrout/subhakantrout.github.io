@@ -1,14 +1,453 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>project-void</title>
-    <script type="module" crossorigin src="/assets/index-DN00O3Z8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C-liw-kr.css">
-  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subhakant Rout — Full Stack Developer</title>
+  <meta name="description" content="Subhakant Rout is a Full Stack Developer specializing in React, Node.js, TypeScript, Python, and AI-powered applications. Explore projects, skills, and experience." />
+  <meta name="keywords" content="Subhakant Rout, Full Stack Developer, React, Node.js, TypeScript, Python, AI, Portfolio" />
+  <meta name="author" content="Subhakant Rout" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Subhakant Rout — Full Stack Developer" />
+  <meta property="og:description" content="Full Stack Developer specializing in React, Node.js, TypeScript, Python, and AI-powered applications." />
+  <meta property="og:url" content="https://subhakantrout.github.io/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/47687380?v=4" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Subhakant Rout — Full Stack Developer" />
+  <meta name="twitter:description" content="Full Stack Developer building AI-powered applications." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/47687380?v=4" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://subhakantrout.github.io/" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" aria-label="Home">&lt;SR<span>/&gt;</span></a>
+      <div class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav__links" id="nav-links">
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#skills" class="nav__link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+        <a href="#experience" class="nav__link" data-section="experience">Experience</a>
+        <a href="#contact" class="nav__cta">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero section" id="hero">
+    <div class="container hero__content">
+      <div class="hero__text">
+        <p class="hero__greeting">👋 Hey there, I'm</p>
+        <h1 class="hero__name">Subhakant <span class="gradient-text">Rout</span></h1>
+        <p class="hero__role">
+          <span id="typed-text"></span><span class="typed-cursor"></span>
+        </p>
+        <p class="hero__description">
+          I build intelligent, beautiful, and scalable applications. From AI-powered platforms to real-time trading engines, I turn complex ideas into elegant digital experiences.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            <span>View My Work</span>
+            <svg class="btn__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <span>Get In Touch</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__avatar-wrapper">
+          <div class="hero__avatar-glow"></div>
+          <div class="hero__avatar-ring"></div>
+          <img
+            src="https://avatars.githubusercontent.com/u/47687380?v=4"
+            alt="Subhakant Rout — Full Stack Developer"
+            class="hero__avatar"
+            width="340"
+            height="340"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">// About Me</span>
+        <h2 class="section__title">Crafting the Future,<br>One Line at a Time</h2>
+        <p class="section__subtitle">Passionate about building software that matters — merging robust engineering with intelligent design.</p>
+      </div>
+      <div class="about__content">
+        <div class="about__text reveal">
+          <p>
+            I'm <strong>Subhakant Rout</strong>, a Full Stack Developer with a deep passion for building applications at the intersection of <strong>AI and web technologies</strong>. I thrive on transforming complex problems into elegant, user-centric solutions.
+          </p>
+          <p>
+            My journey spans from crafting <strong>real-time trading platforms</strong> and <strong>AI drug-repurposing engines</strong> to building <strong>visual pipeline studios</strong> for local AI models. I believe in writing clean, maintainable code and shipping software that makes a real impact.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring the latest in machine learning research, contributing to open-source projects, or diving deep into physics simulations and knowledge graphs.
+          </p>
+        </div>
+        <div class="about__stats reveal reveal-delay-2">
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="13" data-suffix="+">0</div>
+            <div class="stat-card__label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="6" data-suffix="+">0</div>
+            <div class="stat-card__label">Years Coding</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="12" data-suffix="+">0</div>
+            <div class="stat-card__label">Technologies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-card__label">Passion Driven</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">// Tech Stack</span>
+        <h2 class="section__title">Skills & Technologies</h2>
+        <p class="section__subtitle">The tools and technologies I use to bring ideas to life.</p>
+      </div>
+      <div class="skills__grid">
+        <div class="skill-card reveal" style="--level: 95%">
+          <span class="skill-card__icon">⚛️</span>
+          <span class="skill-card__name">React</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1" style="--level: 90%">
+          <span class="skill-card__icon">🟨</span>
+          <span class="skill-card__name">JavaScript</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2" style="--level: 88%">
+          <span class="skill-card__icon">🔷</span>
+          <span class="skill-card__name">TypeScript</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3" style="--level: 92%">
+          <span class="skill-card__icon">🟢</span>
+          <span class="skill-card__name">Node.js</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-4" style="--level: 85%">
+          <span class="skill-card__icon">🚀</span>
+          <span class="skill-card__name">Express</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-5" style="--level: 88%">
+          <span class="skill-card__icon">🐍</span>
+          <span class="skill-card__name">Python</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal" style="--level: 85%">
+          <span class="skill-card__icon">⚡</span>
+          <span class="skill-card__name">FastAPI</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1" style="--level: 82%">
+          <span class="skill-card__icon">🍃</span>
+          <span class="skill-card__name">MongoDB</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2" style="--level: 80%">
+          <span class="skill-card__icon">🅰️</span>
+          <span class="skill-card__name">Angular</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3" style="--level: 90%">
+          <span class="skill-card__icon">🎨</span>
+          <span class="skill-card__name">HTML/CSS</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-4" style="--level: 85%">
+          <span class="skill-card__icon">🔀</span>
+          <span class="skill-card__name">Git</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-5" style="--level: 78%">
+          <span class="skill-card__icon">🐳</span>
+          <span class="skill-card__name">Docker</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal" style="--level: 82%">
+          <span class="skill-card__icon">🤖</span>
+          <span class="skill-card__name">AI/ML</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1" style="--level: 80%">
+          <span class="skill-card__icon">🧊</span>
+          <span class="skill-card__name">Three.js</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2" style="--level: 82%">
+          <span class="skill-card__icon">🔥</span>
+          <span class="skill-card__name">PyTorch</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3" style="--level: 85%">
+          <span class="skill-card__icon">📊</span>
+          <span class="skill-card__name">Streamlit</span>
+          <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">// Featured Work</span>
+        <h2 class="section__title">Projects I've Built</h2>
+        <p class="section__subtitle">A selection of projects that showcase my skills in full-stack development, AI, and creative engineering.</p>
+      </div>
+      <div class="projects__grid">
+
+        <!-- Project 1: Rosetta Engine -->
+        <article class="project-card reveal">
+          <div class="project-card__header">
+            <div class="project-card__icon">🧬</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/rosetta-engine" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Rosetta Engine on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Rosetta Engine</h3>
+          <p class="project-card__description">AI-powered drug repurposing pipeline that federates live data across 8 biomedical databases, ranks candidates via DeepSeek V4 LLM analysis, and visualizes target–drug–protein networks in an interactive 3D knowledge graph.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Python</span>
+            <span class="project-card__tag">FastAPI</span>
+            <span class="project-card__tag">AI</span>
+            <span class="project-card__tag">Streamlit</span>
+            <span class="project-card__tag">LLM</span>
+          </div>
+        </article>
+
+        <!-- Project 2: ModelSmith -->
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-card__header">
+            <div class="project-card__icon">🛠️</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/modelsmith" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View ModelSmith on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">ModelSmith</h3>
+          <p class="project-card__description">A visual node-based pipeline studio for local AI models — uncensor, merge, compress, and deploy models without writing code. Features a React node editor with real-time pipeline execution.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">TypeScript</span>
+            <span class="project-card__tag">React</span>
+            <span class="project-card__tag">FastAPI</span>
+            <span class="project-card__tag">PyTorch</span>
+            <span class="project-card__tag">HuggingFace</span>
+          </div>
+        </article>
+
+        <!-- Project 3: Nebulith -->
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-card__header">
+            <div class="project-card__icon">🌌</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/nebulith" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Nebulith on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Nebulith</h3>
+          <p class="project-card__description">A self-hosted AI workspace. Chat with local models, run autonomous agents, and manage your documents, emails, and tasks with privacy-first AI — no cloud dependency.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">JavaScript</span>
+            <span class="project-card__tag">AI Agents</span>
+            <span class="project-card__tag">LLM</span>
+            <span class="project-card__tag">Self-Hosted</span>
+          </div>
+        </article>
+
+        <!-- Project 4: Trading Platform -->
+        <article class="project-card reveal reveal-delay-3">
+          <div class="project-card__header">
+            <div class="project-card__icon">📈</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/trading-platform" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Trading Platform on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">AI Trading Platform</h3>
+          <p class="project-card__description">Advanced real-time AI-powered trading platform bridging MetaTrader 5, FastAPI, and Local LLMs (Ollama). Features live market analysis with intelligent trade signals.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Python</span>
+            <span class="project-card__tag">FastAPI</span>
+            <span class="project-card__tag">Ollama</span>
+            <span class="project-card__tag">MetaTrader5</span>
+            <span class="project-card__tag">Real-time</span>
+          </div>
+        </article>
+
+        <!-- Project 5: Noether's Loom -->
+        <article class="project-card reveal reveal-delay-4">
+          <div class="project-card__header">
+            <div class="project-card__icon">🌀</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/Noethers-Loom" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Noether's Loom on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Noether's Loom</h3>
+          <p class="project-card__description">A premium Synthetic Reality Engine using Gemma 4 AI to derive and visualize custom physics from mathematical Lagrangians. Renders 3D simulations with Three.js.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">JavaScript</span>
+            <span class="project-card__tag">Three.js</span>
+            <span class="project-card__tag">Gemma 4</span>
+            <span class="project-card__tag">Physics</span>
+          </div>
+        </article>
+
+        <!-- Project 6: Akasha -->
+        <article class="project-card reveal reveal-delay-5">
+          <div class="project-card__header">
+            <div class="project-card__icon">🕉️</div>
+            <div class="project-card__links">
+              <a href="https://github.com/subhakantrout/akasha" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Akasha on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Akasha</h3>
+          <p class="project-card__description">Sovereign Vedic Intelligence Portal — a local-first knowledge graph and AI Guru for sacred Dharmic texts. Powered by Ollama with semantic search across Sanskrit scriptures.</p>
+          <div class="project-card__tags">
+            <span class="project-card__tag">JavaScript</span>
+            <span class="project-card__tag">Ollama</span>
+            <span class="project-card__tag">Knowledge Graph</span>
+            <span class="project-card__tag">Sanskrit</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">// Journey</span>
+        <h2 class="section__title">Experience & Milestones</h2>
+        <p class="section__subtitle">A timeline of my growth as a developer — from first lines of code to building AI-powered platforms.</p>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2026 — Present</span>
+            <h3 class="timeline__title">AI & Full Stack Engineering</h3>
+            <p class="timeline__subtitle">Independent Developer & Open Source</p>
+            <p class="timeline__description">Building cutting-edge AI-powered applications — from drug repurposing engines to visual model pipeline studios. Working with LLMs, knowledge graphs, and real-time data processing at scale.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal-delay-1">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2024 — 2026</span>
+            <h3 class="timeline__title">Full Stack Developer</h3>
+            <p class="timeline__subtitle">AI & Trading Systems</p>
+            <p class="timeline__description">Developed AI-powered trading platforms integrating MetaTrader 5 with local LLMs. Built self-hosted AI workspaces with autonomous agent capabilities and privacy-first architecture.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal-delay-2">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2021 — 2024</span>
+            <h3 class="timeline__title">Web Developer</h3>
+            <p class="timeline__subtitle">Frontend & Backend Development</p>
+            <p class="timeline__description">Built responsive web applications using React, Angular, Node.js, and Express. Worked with MongoDB, REST APIs, and modern frontend tooling. Deployed projects on GitHub Pages and cloud platforms.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal-delay-3">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2019 — 2021</span>
+            <h3 class="timeline__title">Learning & Foundations</h3>
+            <p class="timeline__subtitle">Started the coding journey</p>
+            <p class="timeline__description">Began with HTML, CSS, JavaScript, and gradually moved to frameworks. Built early projects like e-commerce apps and portfolio websites. First GitHub contributions and open-source exploration.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__content reveal">
+        <span class="section__label">// Get In Touch</span>
+        <h2 class="contact__title">Let's Build Something<br><span class="gradient-text">Amazing Together</span></h2>
+        <p class="contact__text">
+          I'm always open to new opportunities, interesting projects, and meaningful collaborations. Whether you have a question, a proposal, or just want to say hi — don't hesitate to reach out.
+        </p>
+        <div class="contact__links">
+          <a href="mailto:subhakantrout@gmail.com" class="contact__link" id="email-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>subhakantrout@gmail.com</span>
+          </a>
+          <a href="https://github.com/subhakantrout" target="_blank" rel="noopener noreferrer" class="contact__link" id="github-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">Designed & Built with <span>❤️</span> by Subhakant Rout</p>
+      <p class="footer__copyright">&copy; 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
