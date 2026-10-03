@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Liqwid Pips — Quantitative Pine Script & Market Structure Indicator Systems</title>
+  <meta name="description" content="Portfolio of Liqwid Pips. Engineering institutional liquidity sweep engines, SMC market structure algorithms, and zero-repaint trading indicators." />
+  <meta name="keywords" content="Liqwid Pips, TradingView Indicators, Pine Script v6, Liquidity Sweep Engine, Smart Money Concepts, SMC, Forex, Gold, Crypto, Algo Trading" />
+  <meta name="author" content="Liqwid Pips" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Liqwid Pips — Trade / Analyze / Grow" />
+  <meta property="og:description" content="Institutional Order Flow, Liquidity Sweeps, and Quantitative Pine Script Systems." />
+  <meta property="og:image" content="assets/logo.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Particle Canvas & Matrix Background -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="matrix-grid-bg" aria-hidden="true"></div>
+
+  <!-- TOP LIVE TELEMETRY TICKER -->
+  <aside class="telemetry-ticker">
+    <div class="ticker-cluster">
+      <div class="ticker-item">
+        <span class="asset">XAU/USD</span>
+        <span class="price" id="tick-xau">$2,682.40</span>
+        <span class="change up">+0.82%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="asset">EUR/USD</span>
+        <span class="price">1.0845</span>
+        <span class="change up">+0.14%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="asset">BTC/USD</span>
+        <span class="price">$67,420.00</span>
+        <span class="change up">+2.45%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="asset">US30</span>
+        <span class="price">42,890.5</span>
+        <span class="change down">-0.18%</span>
+      </div>
+    </div>
+    <div class="ticker-status">
+      <div class="status-dot"></div>
+      <span class="status-label">PINE SCRIPT v6 ENGINES ONLINE</span>
+    </div>
+  </aside>
+
+  <!-- SITE HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="page-container">
+      <nav class="nav-inner">
+        <a href="#hero" class="brand-link" id="brand-home-link">
+          <img src="assets/logo.jpg" alt="Liqwid Pips Logo" class="brand-logo-img" />
+          <div class="brand-meta">
+            <span class="brand-title">LIQWID<span>PIPS</span></span>
+            <span class="brand-tagline">TRADE / ANALYZE / GROW</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#simulator" class="nav-link">Interactive Chart</a></li>
+          <li><a href="#indicators" class="nav-link">Indicators</a></li>
+          <li><a href="#philosophy" class="nav-link">Architecture</a></li>
+          <li><a href="#calculator" class="nav-link">Risk Calculator</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Terminal Connect</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-yt" id="nav-yt-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            SUBSCRIBE
+          </a>
+          <a href="#indicators" class="btn btn-cyan" id="nav-cta-btn">EXPLORE SUITE</a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+          <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="page-container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-pill-badge">
+              <span class="badge-tag">QUANT ENGINE</span>
+              <span>SYSTEMATIC MARKET STRUCTURE & SMC</span>
+            </div>
+
+            <h1 class="hero-title">
+              Precision Trading <br />
+              <span class="glow-text">Engineered for Pips.</span>
+            </h1>
+
+            <p class="hero-description">
+              Welcome to <strong>Liqwid Pips</strong>. Architect of institutional-grade 
+              <strong>Pine Script v6</strong> indicators, algorithmic liquidity sweep systems, 
+              and zero-repaint market structure models across Forex, Gold, Crypto, and Indices.
+            </p>
+
+            <div class="hero-market-tags">
+              <span class="market-tag">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                FOREX
+              </span>
+              <span class="market-tag">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                GOLD (XAU/USD)
+              </span>
+              <span class="market-tag">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                CRYPTO
+              </span>
+              <span class="market-tag">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                INDICES
+              </span>
+            </div>
+
+            <div class="hero-cta-group">
+              <a href="#simulator" class="btn btn-cyan" id="hero-chart-cta">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                TEST LIVE CHART
+              </a>
+              <a href="#indicators" class="btn btn-outline-cyan" id="hero-indicators-cta">
+                VIEW INDICATOR SUITE
+              </a>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <div class="num">100<span>%</span></div>
+                <div class="lbl">Zero-Repaint Execution</div>
+              </div>
+              <div class="stat-item">
+                <div class="num">v6<span>.0</span></div>
+                <div class="lbl">Pine Script Standard</div>
+              </div>
+              <div class="stat-item">
+                <div class="num">4<span>+</span></div>
+                <div class="lbl">Asset Classes</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Banner Card -->
+          <div class="hero-visual-card">
+            <img src="assets/banner-hero.jpg" alt="Liqwid Pips Cyber Bull & Bear Banner" class="hero-banner-img" />
+            <div class="hero-banner-overlay"></div>
+            <div class="hero-banner-floating-badge">
+              <div class="live-pulse-badge">
+                <span class="status-dot"></span>
+                <span>LIQWID PIPS ECOSYSTEM</span>
+              </div>
+              <span style="color: #8E9EA8;">BETTER ANALYSIS / BIGGER OPPORTUNITIES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANORAMIC STRIP BANNER -->
+    <section class="panoramic-strip-section" aria-label="Brand Overview Banner">
+      <div class="page-container">
+        <div class="panoramic-frame">
+          <img src="assets/banner-panoramic.png" alt="Liqwid Pips Bull and Bear panoramic artwork" class="panoramic-img" />
+          <div class="panoramic-overlay-bar">
+            <div class="panoramic-pillars">
+              <div class="pillar-item">
+                <span class="pillar-title">TRADE</span>
+                <span class="pillar-sub">Systematic Execution</span>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-title">ANALYZE</span>
+                <span class="pillar-sub">Order Flow & Liquidity</span>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-title">GROW</span>
+                <span class="pillar-sub">Compound Capital</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-cyan" style="font-size: 0.75rem; padding: 0.5rem 1rem;">GET ACCESS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LIVE CANDLESTICK CHART SIMULATOR -->
+    <section class="chart-sandbox-section" id="simulator">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">INTERACTIVE SANDBOX</span>
+          <h2 class="section-title">Experience the <span>Algorithms Live</span></h2>
+          <p class="section-desc">
+            Toggle Liqwid Pips indicator layers directly on the interactive candlestick canvas. 
+            Watch real-time ticking, liquidity sweeps, and market structure calculations in action.
+          </p>
+        </div>
+
+        <div class="chart-terminal">
+          <!-- Top Bar: Asset Selector & Timeframe -->
+          <div class="chart-header-bar">
+            <div class="chart-asset-switchers">
+              <button class="asset-tab active" data-asset="XAUUSD">XAUUSD (GOLD)</button>
+              <button class="asset-tab" data-asset="EURUSD">EURUSD</button>
+              <button class="asset-tab" data-asset="BTCUSD">BTCUSD</button>
+              <button class="asset-tab" data-asset="US30">US30</button>
+            </div>
+
+            <div class="chart-timeframe-switchers">
+              <button class="tf-btn" data-tf="1m">1m</button>
+              <button class="tf-btn" data-tf="5m">5m</button>
+              <button class="tf-btn active" data-tf="15m">15m</button>
+              <button class="tf-btn" data-tf="1H">1H</button>
+              <button class="tf-btn" data-tf="4H">4H</button>
+              <button class="tf-btn" data-tf="1D">1D</button>
+            </div>
+
+            <div class="chart-telemetry-badge">
+              <span>LIVE PRICE:</span>
+              <span class="val" id="live-chart-price">$2,682.50</span>
+            </div>
+          </div>
+
+          <!-- Layer Toggle Controls -->
+          <div class="chart-layer-controls">
+            <span class="layer-title">ACTIVE LAYERS:</span>
+            
+            <label class="layer-toggle">
+              <input type="checkbox" data-layer="sweeps" checked />
+              <span>Liquidity Sweeps (BSL/SSL)</span>
+            </label>
+
+            <label class="layer-toggle">
+              <input type="checkbox" data-layer="smc" checked />
+              <span>SMC Order Blocks & FVG</span>
+            </label>
+
+            <label class="layer-toggle">
+              <input type="checkbox" data-layer="structure" checked />
+              <span>Market Structure (BOS)</span>
+            </label>
+
+            <label class="layer-toggle">
+              <input type="checkbox" data-layer="waves" />
+              <span>Elliott Wave 1-2-3-4-5</span>
+            </label>
+          </div>
+
+          <!-- Canvas Drawing Area -->
+          <div class="chart-canvas-container">
+            <canvas id="candlestick-canvas"></canvas>
+            <div class="chart-hover-hud">
+              <div>O: <span class="val" id="hud-open">2681.20</span></div>
+              <div>H: <span class="val" id="hud-high">2684.50</span></div>
+              <div>L: <span class="val" id="hud-low">2680.10</span></div>
+              <div>C: <span class="val" id="hud-close">2683.40</span></div>
+            </div>
+          </div>
+
+          <!-- Chart Footer Bar -->
+          <div class="chart-footer-bar">
+            <div class="chart-legend-row">
+              <div class="legend-chip">
+                <span class="legend-color-dot" style="background: #00F0FF;"></span>
+                <span>BSL / SSL Sweeps</span>
+              </div>
+              <div class="legend-chip">
+                <span class="legend-color-dot" style="background: rgba(0, 240, 255, 0.4);"></span>
+                <span>Fair Value Gaps (FVG)</span>
+              </div>
+              <div class="legend-chip">
+                <span class="legend-color-dot" style="background: #00E676;"></span>
+                <span>Break of Structure (BOS)</span>
+              </div>
+              <div class="legend-chip">
+                <span class="legend-color-dot" style="background: #FFD166;"></span>
+                <span>Elliott Wave Sequence</span>
+              </div>
+            </div>
+            <div><span>CANVAS RESOLUTION: Hi-DPR 60FPS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDICATOR SHOWCASE GRID -->
+    <section class="indicators-section" id="indicators">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">FLAGSHIP ALGORITHMS</span>
+          <h2 class="section-title">The <span>Liqwid Pips</span> Indicator Suite</h2>
+          <p class="section-desc">
+            Engineered with strict zero-repaint logic, deterministic wick-mitigation math, 
+            and multi-timeframe liquidity synchronization.
+          </p>
+        </div>
+
+        <div class="indicator-grid">
+          <!-- Card 1: Liquidity Sweep Engine v2.0 -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v6</span>
+              <span class="status-badge verified">● VERIFIED ZERO-REPAINT</span>
+            </div>
+            <h3 class="card-title">Liquidity Sweep Engine v2.0</h3>
+            <span class="card-subtitle">Unified SMC + Adaptive Trend-Quality System</span>
+            <p class="card-description">
+              Monitors Buy Side Liquidity (BSL) and Sell Side Liquidity (SSL) pools across external and internal 
+              swing periods. Employs precision wick-penetration checks to confirm institutional liquidity absorption.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">Forex, Gold (XAUUSD), Indices</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Optimal Timeframes:</span>
+                <span class="spec-val">1m, 5m, 15m, 1H</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Alert Automations:</span>
+                <span class="spec-val">Webhook, JSON, Telegram</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="lse">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+
+          <!-- Card 2: XAUUSD Liquidity-SMC Precision Desk -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v6</span>
+              <span class="status-badge verified">● MULTI-TIMEFRAME</span>
+            </div>
+            <h3 class="card-title">XAUUSD Liquidity-SMC Desk</h3>
+            <span class="card-subtitle">Gold Macro Liquidity & Institutional Kill Zones</span>
+            <p class="card-description">
+              Tuned for Gold volatility. Auto-maps 4H Higher Timeframe market structure into 5m entry triggers with 
+              ATR-adaptive sweep tolerances ($0.30-$0.60 gold tick calibration) and London/NY Kill Zone boundaries.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">XAUUSD (Gold), Metals</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Sessions:</span>
+                <span class="spec-val">Asian, London, New York KZ</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Key Features:</span>
+                <span class="spec-val">PDH/PDL, Equal Highs/Lows</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="xau">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+
+          <!-- Card 3: Elliott Wave Rule Checker [Fixed] -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v6</span>
+              <span class="status-badge verified">● 3 HARD GOLDEN RULES</span>
+            </div>
+            <h3 class="card-title">Elliott Wave Rule Checker</h3>
+            <span class="card-subtitle">Impulse 1-2-3-4-5 & FVG Confluence Engine</span>
+            <p class="card-description">
+              Algorithmic Elliott Wave validator enforcing classical rules: Wave 3 never shortest, Wave 2 no 100% retrace, 
+              and Wave 4 zero overlap with Wave 1. Includes institutional Fair Value Gap reloading zones.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">All Equities, Crypto, FX</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Wave Logic:</span>
+                <span class="spec-val">ZigZag 1-2-3-4-5 + A-B-C</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Execution Mode:</span>
+                <span class="spec-val">Confirmed Candle Close Only</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="ew">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+
+          <!-- Card 4: Phantom Reversal Model [3:30 AM] -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v5/v6</span>
+              <span class="status-badge verified">● TIME THEORY</span>
+            </div>
+            <h3 class="card-title">Phantom Reversal Model</h3>
+            <span class="card-subtitle">Sydney Expansion & Standard Deviation Bands</span>
+            <p class="card-description">
+              Captures early algorithmic market manipulation cycles between 03:30 - 05:30. Deploys standard deviation 
+              projection channels (2.0 - 2.5 SD) and displacement bar filters for high-confluence reversal setups.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">Forex, Indices, Gold</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Core Metric:</span>
+                <span class="spec-val">Displacement ATR + Projections</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Timing Window:</span>
+                <span class="spec-val">03:30 - 05:30 Window</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="prm">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+
+          <!-- Card 5: SR Zone Engine -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v6</span>
+              <span class="status-badge verified">● INSTITUTIONAL BLOCKS</span>
+            </div>
+            <h3 class="card-title">SR Zone Engine</h3>
+            <span class="card-subtitle">Dynamic Order Block & Key Level Extractor</span>
+            <p class="card-description">
+              Identifies fresh, unmitigated order blocks, premium/discount equilibrium pricing, and liquidity-rich 
+              support & resistance zones with automated invalidation on retests.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">Crypto, FX, Indices</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Zone Calculation:</span>
+                <span class="spec-val">Volume-Weighted Order Blocks</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Display:</span>
+                <span class="spec-val">Auto-Mitigation Boxes</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="lse">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+
+          <!-- Card 6: Gap Digga Lethal Engine -->
+          <article class="indicator-card">
+            <div class="card-top-meta">
+              <span class="pine-badge">PINE SCRIPT v6</span>
+              <span class="status-badge verified">● IMBALANCE HUNTER</span>
+            </div>
+            <h3 class="card-title">Gap Digga Lethal</h3>
+            <span class="card-subtitle">Fair Value Gap Depletion & Exhaustion Reversals</span>
+            <p class="card-description">
+              Tracks high-velocity opening gaps and intra-day fair value voids. Evaluates gap fill percentages 
+              and triggers reversal alerts when liquidity is exhausted at the 50% CE (Consequent Encroachment) level.
+            </p>
+            <div class="indicator-spec-list">
+              <div class="spec-row">
+                <span class="spec-key">Target Assets:</span>
+                <span class="spec-val accent">Indices (NQ, ES, US30), Gold</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Signal Trigger:</span>
+                <span class="spec-val">50% CE Confluence Bounce</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Execution:</span>
+                <span class="spec-val">Instant Alert & Webhook</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cyan open-indicator-modal" data-indicator="xau">VIEW LOGIC & CODE</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUANT PHILOSOPHY & SYSTEM ARCHITECTURE -->
+    <section class="philosophy-section" id="philosophy">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">ENGINEERING STANDARDS</span>
+          <h2 class="section-title">Why <span>Liqwid Pips</span> Algorithms Win</h2>
+          <p class="section-desc">
+            Eliminating retail fallacies with rigorous Pine Script mechanics and institutional order flow models.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3>100% Zero-Repaint Guarantee</h3>
+            <p>
+              Signals and markers strictly calculate on candle confirmation (<code>barstate.isconfirmed</code>). 
+              No disappearing arrows, no phantom retrospective pills, and no intra-bar survivorship bias.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3>Institutional Liquidity Sweeps</h3>
+            <p>
+              Retail indicators rely on lagging moving averages. Liqwid Pips indicators focus on what moves markets: 
+              liquidity pools (BSL/SSL), engineered fakeouts, Fair Value Gaps, and smart money stop runs.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3>Direct Webhook Automation</h3>
+            <p>
+              Every indicator generates structured JSON payload alerts designed for automated execution bridges 
+              connecting TradingView alerts to Bybit, MT4, MT5, Binance, or Tradovate in sub-second latency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PIP & RISK CALCULATOR -->
+    <section class="calculator-section" id="calculator">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">TRADER TOOLKIT</span>
+          <h2 class="section-title">Position Size & <span>Risk Calculator</span></h2>
+          <p class="section-desc">
+            Calculate your precise position size and pip valuation before entering any liquidity sweep.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-inputs">
+            <div class="calc-field">
+              <label for="calc-balance">Account Balance ($ USD)</label>
+              <input type="number" id="calc-balance" value="10000" step="500" />
+            </div>
+
+            <div class="calc-field">
+              <label for="calc-risk-pct">Risk Percentage (%)</label>
+              <input type="number" id="calc-risk-pct" value="1.0" step="0.25" min="0.1" max="10" />
+            </div>
+
+            <div class="calc-field">
+              <label for="calc-sl-pips">Stop Loss (Pips / Points)</label>
+              <input type="number" id="calc-sl-pips" value="20" step="1" min="1" />
+            </div>
+
+            <div class="calc-field">
+              <label for="calc-pair">Asset Instrument</label>
+              <select id="calc-pair">
+                <option value="XAUUSD">XAUUSD (Gold 100oz)</option>
+                <option value="EURUSD">EURUSD (Forex Standard)</option>
+                <option value="BTCUSD">BTCUSD (Crypto 1 Contract)</option>
+                <option value="US30">US30 (Index CFD)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-results-panel">
+            <div class="calc-res-item">
+              <span class="calc-res-lbl">Capital at Risk:</span>
+              <span class="calc-res-val" id="res-risk-amt">$100.00</span>
+            </div>
+            <div class="calc-res-item">
+              <span class="calc-res-lbl">Recommended Lot Size:</span>
+              <span class="calc-res-val" id="res-lot-size">0.50 Lots</span>
+            </div>
+            <div class="calc-res-item">
+              <span class="calc-res-lbl">Estimated Pip Value:</span>
+              <span class="calc-res-val" id="res-pip-val">$5.00 / pip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM SERVICES & COMMISSION TIERS -->
+    <section class="services-section" id="services">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">BESPOKE DEVELOPMENT</span>
+          <h2 class="section-title">Custom <span>Pine Script Services</span></h2>
+          <p class="section-desc">
+            Transform your proprietary manual trading strategies into automated institutional indicators or complete bots.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-tier-card">
+            <h3 class="tier-name">Indicator Architecture</h3>
+            <span class="tier-target">For Traders Seeking Custom Visuals</span>
+            <ul class="tier-features">
+              <li>Custom Pine Script v6 Indicator</li>
+              <li>SMC / Liquidity / Momentum integration</li>
+              <li>Clean, uncluttered on-chart visual HUD</li>
+              <li>100% Non-Repainting Guarantee</li>
+              <li>Full source code & documentation</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-cyan">COMMISSION INDICATOR</a>
+          </div>
+
+          <div class="service-tier-card featured">
+            <span class="tier-ribbon">POPULAR</span>
+            <h3 class="tier-name">Strategy & Backtest Engine</h3>
+            <span class="tier-target">For Systematic & Prop Traders</span>
+            <ul class="tier-features">
+              <li>Complete Pine Script Strategy Script</li>
+              <li>Historical backtesting with realistic slippage</li>
+              <li>Max drawdown & Sharpe ratio optimization</li>
+              <li>Dynamic TP1 / TP2 / Trailing Stop logic</li>
+              <li>Prop firm rule compliance filters</li>
+            </ul>
+            <a href="#contact" class="btn btn-cyan">REQUEST STRATEGY DESK</a>
+          </div>
+
+          <div class="service-tier-card">
+            <h3 class="tier-name">Automated Webhook Bridge</h3>
+            <span class="tier-target">For Hands-Off Trade Execution</span>
+            <ul class="tier-features">
+              <li>TradingView alert syntax formatting</li>
+              <li>Direct webhook integration to MT4 / MT5</li>
+              <li>Bybit / Binance / Tradovate bot connection</li>
+              <li>Position sizing & risk parameter scripts</li>
+              <li>Sub-second cloud bridge deployment guide</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-cyan">AUTOMATE EXECUTION</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY & YOUTUBE BANNER -->
+    <section class="community-section">
+      <div class="page-container">
+        <div class="community-box">
+          <div class="community-text">
+            <h2>Join the <span>Liqwid Pips</span> Network</h2>
+            <p>
+              Subscribe on YouTube for weekly market breakdowns, liquidity sweep tutorials, 
+              and live indicator walk-throughs across Forex and Gold.
+            </p>
+          </div>
+          <div class="community-actions">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-yt">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              SUBSCRIBE ON YOUTUBE
+            </a>
+            <a href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan">
+              TRADINGVIEW SCRIPTS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / TERMINAL CONNECT -->
+    <section class="contact-section" id="contact">
+      <div class="page-container">
+        <div class="section-head">
+          <span class="section-badge">TRANSMISSION DESK</span>
+          <h2 class="section-title">Connect with <span>Liqwid Pips</span></h2>
+          <p class="section-desc">
+            Inquire about indicator licenses, commission a custom Pine Script algorithm, or collaborate on quantitative trading models.
+          </p>
+        </div>
+
+        <div class="contact-terminal-grid">
+          <div class="contact-info-card">
+            <div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.5rem; color: #FFF;">Direct Frequency</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Available for private commissions, indicator licensing, and proprietary trading consultations.
+              </p>
+            </div>
+
+            <a href="https://github.com/subhakantrout" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+              <div class="icon-circle">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 600; color: #FFF;">GitHub Repositories</div>
+                <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--cyan-core);">github.com/subhakantrout</div>
+              </div>
+            </a>
+
+            <a href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+              <div class="icon-circle">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 600; color: #FFF;">TradingView Profile</div>
+                <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--cyan-core);">tradingview.com/u/LiqwidPips</div>
+              </div>
+            </a>
+
+            <div class="contact-link-item">
+              <div class="icon-circle">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 600; color: #FFF;">Response Window</div>
+                <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">&lt; 12 Hours (IST / UTC Global)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <form id="contact-terminal-form">
+              <div class="form-field">
+                <label for="contact-name">Trader / Developer Handle</label>
+                <input type="text" id="contact-name" placeholder="e.g. Satoshi_FX" required />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email">Email or Telegram ID</label>
+                <input type="text" id="contact-email" placeholder="e.g. trader@domain.com or @telegram_handle" required />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-service">Inquiry Category</label>
+                <select id="contact-service">
+                  <option value="indicator">Custom Pine Script v6 Indicator</option>
+                  <option value="strategy">Full Strategy Backtesting & Optimization</option>
+                  <option value="webhook">Webhook Automation (Bybit / MT5)</option>
+                  <option value="license">Liqwid Pips Suite Access</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-message">Technical Requirements / Strategy Scope</label>
+                <textarea id="contact-message" rows="4" placeholder="Describe the indicator rules, timeframes, and specific features you require..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-cyan" style="width: 100%; padding: 0.85rem;" id="contact-submit-btn">
+                SEND SIGNAL TRANSMISSION
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="page-container">
+      <div class="footer-top">
+        <div class="brand-link">
+          <img src="assets/logo.jpg" alt="Liqwid Pips Logo" class="brand-logo-img" />
+          <div class="brand-meta">
+            <span class="brand-title">LIQWID<span>PIPS</span></span>
+            <span class="brand-tagline">TRADE / ANALYZE / GROW</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#simulator" class="nav-link">Live Chart</a>
+          <a href="#indicators" class="nav-link">Indicators</a>
+          <a href="#calculator" class="nav-link">Calculator</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Liqwid Pips. All rights reserved. Quantitative Pine Script Engineering.</div>
+        <div style="color: var(--text-dim); max-width: 480px; text-align: right;">
+          Disclaimer: Algorithmic indicators are analytical tools for technical analysis. Past performance does not guarantee future results. Manage risk accordingly.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INDICATOR LOGIC & PINE SCRIPT MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <h3 id="modal-title">Indicator Title</h3>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan-core);" id="modal-sub">Pine Script v6 Specification</span>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <h4 style="color: #FFF; margin-bottom: 0.5rem; font-family: var(--font-display);">Algorithm Architecture</h4>
+        <p id="modal-desc" style="line-height: 1.6; margin-bottom: 1.2rem;">Detailed description of indicator logic.</p>
+
+        <h4 style="color: #FFF; margin-bottom: 0.5rem; font-family: var(--font-display);">Execution Rules & Confluence</h4>
+        <ul id="modal-features" style="padding-left: 1.2rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+        </ul>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h4 style="color: #FFF; font-family: var(--font-display);">Pine Script Engine Core (v6)</h4>
+          <button class="btn btn-outline-cyan" id="modal-copy-btn" style="font-size: 0.72rem; padding: 0.35rem 0.8rem;">COPY CODE</button>
+        </div>
+        <pre class="code-container"><code id="modal-code"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

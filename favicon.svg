@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#00B4D8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background -->
+  <circle cx="50" cy="50" r="48" fill="#04080A" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)" />
+  
+  <!-- L Monogram (Metallic White/Silver) -->
+  <path d="M 32 26 L 41 26 L 41 62 L 57 62 L 53 71 L 28 71 Z" fill="#FFFFFF" />
+  
+  <!-- Candlesticks on P -->
+  <line x1="52" y1="36" x2="52" y2="48" stroke="#00F0FF" stroke-width="1.5" />
+  <rect x="50" y="39" width="4" height="6" fill="#00F0FF" rx="0.5" />
+  
+  <line x1="59" y1="30" x2="59" y2="44" stroke="#00F0FF" stroke-width="1.5" />
+  <rect x="57" y="33" width="4" height="8" fill="#00F0FF" rx="0.5" />
+  
+  <line x1="66" y1="24" x2="66" y2="40" stroke="#00F0FF" stroke-width="1.5" />
+  <rect x="64" y="27" width="4" height="10" fill="#00F0FF" rx="0.5" />
+
+  <!-- P Monogram (Cyan) -->
+  <path d="M 49 52 L 64 36 C 73 36, 78 41, 78 48 C 78 55, 71 59, 62 59 L 57 59 L 57 71 L 49 71 Z M 57 44 L 57 52 L 62 52 C 67 52, 70 50, 70 48 C 70 45, 67 44, 62 44 Z" fill="url(#cyanGlow)" />
+</svg>
